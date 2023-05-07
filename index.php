@@ -16,9 +16,9 @@ $emp_password = $_POST["emp_password"];
 
 // insert data into emp_login table
 $sql = "INSERT INTO emp_login (emp_email, emp_password) VALUES ('$emp_email', '$emp_password')";
-if ($conn->query($sql) === TRUE) {
-  echo "Welcome Admin";
-} else {
+?>
+<?php
+ if($conn->query($sql) === FALSE) {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
