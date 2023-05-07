@@ -103,15 +103,17 @@
       <h1>Vehicle Information</h1>
     </div>
     <div class="form-group">
+      <form action="vehicle.php" method="post">
       <label for="password">Chasis Number</label>
-      <input type="text" id="Chasis" name="Chasis" required>
+      <input type="text" id="Chasis" name="chasis_no" required>
       <label for="name">Vehicle Brand Name</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="name" name="car_comp" required>
       <label for="username">Year of Purchase</label>
-      <input type="text" id="Year" name="Year" required>
+      <input type="text" id="Year" name="year_of_purchase" required>
       <label for="type">Car Type</label>
-      <input type="text" id="type" name="type" required>   
+      <input type="text" id="type" name="car_type" required>   
       <span><a href="./booking.html"><input type="submit" class="submit" value="SUBMIT" id=""></a></span>
+    </form>
   </div>
   </body>
 </html>

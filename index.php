@@ -1,19 +1,27 @@
+<!-- admin1.html -->
 <?php
-$emp_email = $_POST['emp_email'];
-$emp_password = $_POST['emp_password'];
-
-// Database connection
-$conn = new mysqli('admin','root','','test');
-if($conn->connect_error){
-echo "$conn->connect_error";
-die("Connection Failed : ". $conn->connect_error);
-} else {
-$stmt = $conn->prepare("insert into registration(firstName, lastName, gender, email, password, number) values(?, ?, ?, ?, ?, ?)");
-$stmt->bind_param("sssssi", $emp_email, $emp_password);
-$execval = $stmt->execute();
-echo $execval;
-echo "Registration successfully...";
-$stmt->close();
-$conn->close();
+// connect to database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "garage";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
 }
+
+// get form data
+$emp_email = $_POST["emp_email"];
+$emp_password = $_POST["emp_password"];
+
+// insert data into emp_login table
+$sql = "INSERT INTO emp_login (emp_email, emp_password) VALUES ('$emp_email', '$emp_password')";
+if ($conn->query($sql) === TRUE) {
+  echo "Welcome Admin";
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+// close database connection
+$conn->close();
 ?>
