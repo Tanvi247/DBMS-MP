@@ -23,7 +23,8 @@ $sql = "INSERT INTO vehicle_info (chasis_no, car_comp, year_of_purchase, car_typ
         VALUES ('$chasis_no','$car_comp','$year_of_purchase','$car_type')";
 
 if ($conn->query($sql) === TRUE) {
-  echo "New record created successfully";
+  header("Location: booking.html");
+  exit();
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }

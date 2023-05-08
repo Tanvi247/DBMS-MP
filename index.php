@@ -1,4 +1,3 @@
-<!-- admin1.html -->
 <?php
 // connect to database
 $servername = "localhost";
@@ -16,10 +15,12 @@ $emp_password = $_POST["emp_password"];
 
 // insert data into emp_login table
 $sql = "INSERT INTO emp_login (emp_email, emp_password) VALUES ('$emp_email', '$emp_password')";
-?>
-<?php
- if($conn->query($sql) === FALSE) {
+
+if($conn->query($sql) === FALSE) {
   echo "Error: " . $sql . "<br>" . $conn->error;
+} else {
+  // redirect the user to the admin2.html page
+  header("Location: admin2.html");
 }
 
 // close database connection

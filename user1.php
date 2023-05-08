@@ -27,7 +27,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Execute the statement and check for errors
     if ($stmt->execute()) {
-        echo "Data inserted successfully!";
+        // If the data is successfully inserted, redirect the user to the booking.html page
+        header("Location: vehicle.html");
+        exit();
     } else {
         echo "Error inserting data: " . $stmt->error;
     }
