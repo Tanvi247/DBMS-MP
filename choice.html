@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">      
+<head>
+  <meta charset="UTF-8">
+  <title>Booking-Information</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+  <style>
+    * {
+      box-sizing: border-box; 
+    }
+
+    body {
+      background-image: url("https://img.freepik.com/premium-photo/body-shop-with-cars-work_23-2147897925.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+    }
+
+    .container {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+                  0 10px 10px rgba(0,0,0,0.22);
+      overflow: hidden;
+      width: 400px;
+      max-width: 100%;
+      margin-left: 570px;
+      margin-top: 100px;
+    }
+
+    .form-header {
+      background-color: #016fb8;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 700;
+      padding: 10px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+
+    .form-group {
+      padding: 20px 30px;
+    }
+    label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid #080808;
+        box-sizing: border-box;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+    
+
+    .form-group input {
+      background-color: #016fb8;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      transition: background-color 0.2s ease;
+      width: 100%;
+    } 
+    .form-group input:hover {
+      background-color: #016fb8;
+    }
+
+    .form-group .form-check {
+      align-items: center;
+      display: flex;
+      margin-top: 20px;
+    }
+
+    .form-group .form-check label {
+      font-size: 14px;
+      margin-left: 120px;
+    }
+
+    .form-group .form-check input {
+      margin-right: 5px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-header">
+      <h1>Booking</h1>
+    </div>
+    <div class="form-group">
+        <label for="book_slot">Slot options</label>
+        <span><a href="./vehicle.html"><input type="submit" class="submit" value="Book Slot" id=""></a></span>
+        
+        <br><br>
+        <span><a href="./delete.html"><input type="submit" class="submit" value="Delete Slot" id=""></a></span>
+  </div>
+
+  </body>
+</html>
