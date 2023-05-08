@@ -25,6 +25,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $conn->prepare("INSERT INTO cust_login (cust_name, cust_email, cust_password) VALUES (?, ?, ?)");
     $stmt->bind_param("sss", $cust_name, $cust_email, $cust_password);
 
+    $errors = array();
+           
+    if (empty($cust_name) OR empty($cust_email) OR empty($cust_password)) {
+     array_push($errors,"All fields are required");
+    }
+    if (!filter_var($cust_email, FILTER_VALIDATE_EMAIL)) {
+     array_push($errors, "Email is not valid");
+    }
+    if (strlen($cust_password)<8) {
+     array_push($errors,"Password must be at least 8 charactes long");
+    }
+    
     // Execute the statement and check for errors
     if ($stmt->execute()) {
         // If the data is successfully inserted, redirect the user to the booking.html page
